@@ -4,6 +4,7 @@
       <big-photo :imgOb="showImg" :screenWidth="screenWidth"></big-photo>
       <div class="photos" v-for="i in listCount" :key="i" :style="{width: 100.0 / listCount + '%'}" @click="lookBigPhoto($event, i - 1)" ref="photolist">
         <photo-item :data-index='index'  v-for="(img, index) in lists[i - 1]" :key="index" :imgOb="img" :standardWidth="standardWidth"></photo-item>  
+        
       </div>
     </div>
   </div>
