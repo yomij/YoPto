@@ -10,7 +10,9 @@
       </div>
       <ul class="nav ">
         <li><a class="link" href="">Yomi</a></li>
-        <li><router-link class="link" :to="{name: 'AsPhotographer'}">Photographer</router-link></li>
+        <li>
+          <router-link class="link" :to="{name: 'AsPhotographer'}">Photographer</router-link>
+        </li>
         <li><a class="link" href="">Programmer</a></li>
         <li><a class="link" href="">Music Lover</a></li>
         <li><a class="link" href="">About</a></li>
@@ -22,35 +24,35 @@
 
 <script>
 import logo from '@/assets/logo-color.png'
+
 export default {
   name: 'YHeader',
   data () {
     return {
-        logo
+      logo
     }
   },
-  methods: {
-    
-  }
+  methods: {}
 }
 </script>
 
 <style scoped lang="scss">
-.header {
-  position: fixed;
-  top: 0;
-  height: 62px;
-  z-index: 99;
-  padding: 0 20px;
-  background-color: #fff;
-}
-.y-header {
+  .header {
+    position: fixed;
+    top: 0;
+    height: 62px;
+    z-index: 99;
+    padding: 0 20px;
+    background-color: #fff;
+  }
 
-  // width: 70%;
-  margin:0 auto;
-  width: 100%;
-  height: 62px;
-  // border-bottom: 1px solid rgba(100,100,100,.2);
+  .y-header {
+
+    // width: 70%;
+    margin: 0 auto;
+    width: 100%;
+    height: 62px;
+    // border-bottom: 1px solid rgba(100,100,100,.2);
 
     background-color: #fff;
     // line-height: 62px;
@@ -66,36 +68,37 @@ export default {
         float: left;
       }
       .link {
-          color: #999;
-          float: left;
-          padding: 19px 12px;
-          height: 100%;
-          transition: color .2s ease-in-out,opacity .2s ease-in-out;
-          &:hover {
-              color: #111;
-          }
+        color: #999;
+        float: left;
+        padding: 19px 12px;
+        height: 100%;
+        transition: color .2s ease-in-out, opacity .2s ease-in-out;
+        &:hover {
+          color: #111;
+        }
       }
       .contact {
-          box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 1px 1px rgba(0,0,0,0.06);
-          border: 1px solid #dddddd;
-          top: 12px;
-          margin-bottom: 0;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02), 0 1px 1px rgba(0, 0, 0, 0.06);
+        border: 1px solid #dddddd;
+        top: 12px;
+        margin-bottom: 0;
 
-          &:hover {
-              border: 1px solid #bbb;
-              color: #111;
-          }
+        &:hover {
+          border: 1px solid #bbb;
+          color: #111;
+        }
       }
 
     }
-}
+  }
 
+  @media screen and (max-width: 800px) {
 
-@media screen and (max-width: 800px){
+  }
 
-}
-
-@media only screen and (min-width: 800px) {
-    .example {background: green;}
-}
+  @media only screen and (min-width: 800px) {
+    .example {
+      background: green;
+    }
+  }
 </style>

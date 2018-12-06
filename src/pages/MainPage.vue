@@ -1,10 +1,5 @@
 <template>
   <div class="main-page">
-    <!-- <div>
-          <p>I am Yomi.</p>
-          <p>A student.</p>
-          <p>And Will Be A Programmer.</p>
-      </div> -->
     <div class="first h-100 w-100">
       <div class="mr-auto w-0 ta-center">
         <div>
