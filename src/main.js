@@ -3,9 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import request from '@/util/request'
+import api from '@/api'
 import './assets/css/index.scss'
 
 Vue.config.productionTip = false
+Vue.prototype.$request = request
+Vue.prototype.$api = api
 
 /* eslint-disable no-new */
 new Vue({

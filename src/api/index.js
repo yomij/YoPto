@@ -1,4 +1,2 @@
 import photoApi from './photograph'
-export default {
-  ...photoApi
-}
+export default Object.assign({}, photoApi)
