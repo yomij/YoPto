@@ -3,7 +3,7 @@
     <div class="photos-container" v-if="screenWidth">
       <big-photo :imgOb="showImg"></big-photo>
       <div class="photos" v-for="i in listCount" :key="i" :style="{width: 100.0 / listCount + '%'}" ref="photosLength" @click="lookBigPhoto($event, i - 1)">
-        <photo-item :data-index='index'  v-for="(img, index) in lists[i - 1]" :key="index" :imgOb="img" :standardWidth="standardWidth" :ref="'pi' + index"></photo-item>  
+        <photo-item :data-index='index'  v-for="(img, index) in lists[i - 1]" :key="index" :imgOb="img" :standardWidth="standardWidth" :ref="'pi' + index"></photo-item>
       </div>
     </div>
   </div>
@@ -32,57 +32,54 @@ export default {
         smallUrl: 'http://img.club.pchome.net/kdsarticle/2014/03/27/f6b3a5a63ab45b23ca0e25bb1b8b5a87.jpg',
         height: 1200,
         width: 1920
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534865244288-b47fca3a35e0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a37ca6252a729bfa42706b52771382f2&auto=format&fit=crop&w=334&q=80',
         height: 501,
         width: 334
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534941946572-23438b26af30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2a39cbef202ec33200977e0d25e9f5e8&auto=format&fit=crop&w=750&q=80',
         height: 500,
         width: 750
-      },{
+      }, {
         smallUrl: 'http://img.club.pchome.net/kdsarticle/2014/03/27/f6b3a5a63ab45b23ca0e25bb1b8b5a87.jpg',
         height: 1200,
         width: 1920
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534865244288-b47fca3a35e0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a37ca6252a729bfa42706b52771382f2&auto=format&fit=crop&w=334&q=80',
         height: 501,
         width: 334
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534941946572-23438b26af30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2a39cbef202ec33200977e0d25e9f5e8&auto=format&fit=crop&w=750&q=80',
         height: 500,
         width: 750
-      },{
+      }, {
         smallUrl: 'http://img.club.pchome.net/kdsarticle/2014/03/27/f6b3a5a63ab45b23ca0e25bb1b8b5a87.jpg',
         height: 1200,
         width: 1920
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534865244288-b47fca3a35e0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a37ca6252a729bfa42706b52771382f2&auto=format&fit=crop&w=334&q=80',
         height: 501,
         width: 334
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534941946572-23438b26af30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2a39cbef202ec33200977e0d25e9f5e8&auto=format&fit=crop&w=750&q=80',
         height: 500,
         width: 750
-      },{
+      }, {
         smallUrl: 'http://img.club.pchome.net/kdsarticle/2014/03/27/f6b3a5a63ab45b23ca0e25bb1b8b5a87.jpg',
         height: 1200,
         width: 1920
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534865244288-b47fca3a35e0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a37ca6252a729bfa42706b52771382f2&auto=format&fit=crop&w=334&q=80',
         height: 501,
         width: 334
-      },{
+      }, {
         smallUrl: 'https://images.unsplash.com/photo-1534941946572-23438b26af30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2a39cbef202ec33200977e0d25e9f5e8&auto=format&fit=crop&w=750&q=80',
         height: 500,
         width: 750
-      },]
+      }]
     }
   },
-  created() {
-    //获取数据
-    
-    //
+  created () {
     this.screenWidth = document.body.clientWidth;
     this.listCount = this.getCount(this.screenWidth);
     window.onresize = () => {
@@ -99,53 +96,52 @@ export default {
       }
     }
   },
-  destroyed() {
+  destroyed () {
     window.onresize = null
   },
-  mounted() {
+  mounted () {
 
   },
   methods: {
-    getCount(screenWidth) {
-      if (screenWidth > 1320) { 
-        this.standardWidth = (1320 / 3.0) - 24.0;
-        return 3;
+    getCount (screenWidth) {
+      if (screenWidth > 1320) {
+        this.standardWidth = (1320 / 3.0) - 24.0
+        return 3
       }
       if (screenWidth > 768) {
-        this.standardWidth = (screenWidth / 2.0) - 24.0;
-        return 2;
+        this.standardWidth = (screenWidth / 2.0) - 24.0
+        return 2
       }
-      this.standardWidth = screenWidth - 24.0;
-      return 1;
-    }, 
-    lookBigPhoto(e, i) {
-      if(e.target.className === 'operation') {
-        let index = e.target.parentNode.dataset.index;
-        if(index >= 0) {
-          this.showImg = this.lists[i][index];
+      this.standardWidth = screenWidth - 24.0
+      return 1
+    },
+    lookBigPhoto (e, i) {
+      if (e.target.className === 'operation') {
+        let index = e.target.parentNode.dataset.index
+        if (index >= 0) {
+          this.showImg = this.lists[i][index]
         }
       }
     }
   },
   watch: {
-    listCount() {
-      if(this.listCount === 1) {
-        this.lists = [this.testImgs];
-        return;
+    listCount () {
+      if (this.listCount === 1) {
+        this.lists = [this.testImgs]
+        return
       }
-      let lists = [];
+      let lists = []
       this.testImgs.forEach((item, index) => {
         let f = index % this.listCount;
-        if(typeof lists[f] === 'object') {
+        if (typeof lists[f] === 'object') {
           lists[f].push(item)
         } else {
           lists[f] = [item]
         }
       })
-      console.log(lists);
-      this.lists = lists;
-    },
-    
+      console.log(lists)
+      this.lists = lists
+    }
   }
 }
 </script>
